@@ -1,182 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sir Tanks Media LLC — Morro Bay, CA</title>
+  <meta name="description" content="Telecommunications & media services in Morro Bay, CA. Innovative communication and streaming solutions. Call 838-786-8486 or email hello@cyneris.shop." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --card:#151820;
+      --ink:#f9fafb;
+      --muted:#94a3b8;
+      --brand:#3b82f6; /* blue */
+      --accent:#ec4899; /* pink */
+      --radius:18px;
+      --shadow:0 16px 36px rgba(0,0,0,.5);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:Inter,sans-serif; background:var(--bg); color:var(--ink)}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+    header{position:sticky; top:0; background:rgba(10,10,10,.8); border-bottom:1px solid rgba(255,255,255,.1); z-index:50; backdrop-filter:blur(8px)}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:72px}
+    .brand{display:flex; align-items:center; gap:.7rem; font-weight:900; color:var(--brand)}
+    .logo{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--accent)); display:grid; place-items:center; color:#fff; font-weight:900}
+    .nav ul{display:flex; gap:22px; list-style:none; margin:0; padding:0}
+
+    .hero{padding:90px 0; text-align:center; background:linear-gradient(135deg,#101320,#0b0d12)}
+    .hero h1{font-size:clamp(2rem,4vw,3rem); margin-bottom:12px; color:var(--brand)}
+    .hero p{color:var(--muted); max-width:780px; margin:0 auto}
+    .cta{margin-top:20px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+    .btn{padding:14px 18px; border-radius:14px; background:var(--brand); color:#fff; font-weight:700; border:none; cursor:pointer; box-shadow:var(--shadow)}
+    .btn.ghost{background:transparent; border:2px solid var(--accent); color:var(--accent)}
+
+    section{padding:72px 0}
+    section .head{text-align:center; margin-bottom:22px}
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px}
+
+    .grid{display:grid; gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media(max-width:768px){.grid-2{grid-template-columns:1fr}}
+
+    footer{padding:32px 0; border-top:1px solid rgba(255,255,255,.1); text-align:center; color:var(--muted)}
+  </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <span class="logo">📡</span>
+        <span>Sir Tanks Media LLC</span>
+      </a>
+      <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
+  <section class="hero">
+    <div class="container">
+      <h1>Innovative Media & Communication</h1>
+      <p>Providing telecommunication and media streaming services in Morro Bay, CA. We deliver reliable, scalable, and modern connectivity for businesses and individuals.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+18387868486">Call 838-786-8486</a>
+        <a class="btn ghost" href="mailto:hello@cyneris.shop">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="head"><h2>Our Services</h2></div>
+      <div class="card">
+        <p><strong>Sir Tanks Media LLC</strong> specializes in telecommunications and information services, including web hosting, data processing, media streaming distribution, and content network solutions. We provide advanced connectivity and digital infrastructure tailored to modern businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="head"><h2>Gallery</h2></div>
+      <div class="grid grid-2">
+        <div class="card"><img src="https://avatars.mds.yandex.net/i?id=f60ff9c3444efccd35aac998fd45b69db1ff9fab-4571459-images-thumbs&n=13" alt="Telecom equipment"/></div>
+        <div class="card"><img src="https://spegroup.ru/upload/iblock/523/523533f45749195285caa69770670f49.jpg" alt="Servers and networking"/></div>
+        <div class="card"><img src="https://rfelements.com/assets/Uploads/co-location-1.jpg" alt="Media streaming hardware"/></div>
+        <div class="card"><img src="https://avatars.mds.yandex.net/i?id=b104a6f92e02b4d3d974459d691de1c6c7f8c0b7-8282002-images-thumbs&ref=rim&n=33&w=356&h=200" alt="Network setup"/></div>
+        <div class="card"><img src="https://t4.ftcdn.net/jpg/04/83/85/97/360_F_483859703_9x6WAO1trppcemQKxp3tdEHEnMO8Z1rL.jpg" alt="Communication tower"/></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="head"><h2>About Us</h2></div>
+      <div class="card">
+        <p><strong>Sir Tanks Media LLC</strong> is located at 630 Quintana Rd, Morro Bay, CA 93442-1939, United States. With over $300k in annual revenue, we are a leader in telecommunications, web infrastructure, and media content delivery. Our focus is innovation, quality, and reliability in digital communication services.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="head"><h2>Contact</h2></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <p><strong>Address:</strong> 630 Quintana Rd, Morro Bay, CA 93442-1939, United States<br>
+          <strong>Phone:</strong> <a href="tel:+18387868486">838-786-8486</a><br>
+          <strong>Email:</strong> <a href="mailto:hello@cyneris.shop">hello@cyneris.shop</a></p>
         </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
+        <div class="card">
+          <iframe style="width:100%; height:300px; border:0; border-radius:14px" src="https://www.google.com/maps?q=630+Quintana+Rd,+Morro+Bay,+CA+93442&output=embed" loading="lazy"></iframe>
         </div>
+      </div>
     </div>
+  </section>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Sir Tanks Media LLC. All rights reserved.</p>
     </div>
+  </footer>
 
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
-
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
